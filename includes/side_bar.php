@@ -28,6 +28,11 @@ $role = $_SESSION['role'] ?? '';
                         <i class="fa fa-image me-2 text-danger"></i> Banner
                     </a>
                 </li>
+                <li class="nav-item mb-3">
+                    <a class="nav-link text-dark fw-bold" href="../admin/company.php" style="font-size: .8rem;">
+                        <i class="fa fa-image me-2 text-danger"></i> Company
+                    </a>
+                </li>
             <?php else: ?>
                 <li class="nav-item mb-3">
                     <a class="nav-link active text-dark fw-bold" href="index.php" style="font-size: .8rem;">
