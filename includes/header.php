@@ -45,4 +45,22 @@ if (session_status() === PHP_SESSION_NONE) {
     </div>
 </nav>
 
+<?php
+// Include the config file
+include 'config/config.php';
+
+// Access session data
+foreach ($_SESSION['setup'] as $setupRow) {
+    echo "Key: " . $setupRow['key'] . "<br>";
+    echo "Value: " . $setupRow['value'] . "<br>";
+}
+
+// Access specific data by filtering
+$siteName = array_filter($_SESSION['setup'], function ($row) {
+    return $row['key'] === 'site_name_bn';
+});
+$siteName = reset($siteName); // Get the first matching row
+echo "Site Name: " . $siteName['value'];
+?>
+
 

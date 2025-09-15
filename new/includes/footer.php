@@ -1,3 +1,14 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+// Include the config file
+include_once __DIR__ . '/../config/config.php';
+
+// Access specific data from the session
+$siteName = isset($_SESSION['setup']['site_name_bn']) ? $_SESSION['setup']['site_name_bn'] : 'কোডার পেশাজীবী সমবায় সমিতি লিঃ';
+?>
 <div class="container py-3">
             <div class="row g-5">
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
@@ -12,7 +23,7 @@
                 text-shadow: 1px 2px 8px #fff8, 0 2px 8px #b85c3822;
                 margin: 0.2em 0;
             ">
-                <span style="vertical-align:middle;">কোডার <span style='color:#e7b17a;'>পেশাজীবী</span> সমবায় সমিতি লিঃ</span>
+                <span style="vertical-align:middle;"><?= htmlspecialchars($siteName); ?></span>
             </span>
                 </a>
                     <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam
