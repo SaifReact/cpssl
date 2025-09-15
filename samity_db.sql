@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 14, 2025 at 01:05 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.1.25
+-- Generation Time: Sep 15, 2025 at 08:51 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -33,16 +34,42 @@ CREATE TABLE `banner` (
   `banner_name_en` varchar(255) NOT NULL,
   `banner_image` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `banner`
 --
 
 INSERT INTO `banner` (`id`, `banner_name_bn`, `banner_name_en`, `banner_image`, `created_at`) VALUES
-(3, 'khgdgfdfyi8gk', 'hvdrghbhgdf', 'banner_1757128948_1256.JPG', '2025-09-06 02:07:54'),
-(4, 'htrgefsdgnfdf', 'gfgsdgndsfdfs', 'banner_1757129104_2785.jpg', '2025-09-06 03:25:04'),
-(6, 'jghgfhgfhg', 'vghfhgfhg', 'banner_1757129427_5920.jpg', '2025-09-06 03:30:27');
+(3, 'khgdgfdfyi8gk', 'hvdrghbhgdf', 'banner_1757953180_8834.jpg', '2025-09-06 02:07:54'),
+(4, 'htrgefsdgnfdf', 'gfgsdgndsfdfs', 'banner_1757953172_3635.jpg', '2025-09-06 03:25:04'),
+(6, 'jghgfhgfhg', 'vghfhgfhg', 'banner_1757953162_8655.jpg', '2025-09-06 03:30:27');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `company`
+--
+
+CREATE TABLE `company` (
+  `id` int(11) NOT NULL,
+  `company_name_bn` varchar(255) NOT NULL,
+  `company_name_en` varchar(255) NOT NULL,
+  `company_image` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `company`
+--
+
+INSERT INTO `company` (`id`, `company_name_bn`, `company_name_en`, `company_image`, `created_at`) VALUES
+(1, 'কোডার মার্ট ', 'Coder Mart', '1757955251_project-6.jpg', '2025-09-15 14:13:27'),
+(2, 'কোডার স্টেশন', 'Coder Station', '1757955243_project-4.jpg', '2025-09-15 14:22:47'),
+(3, 'কোডার ফিন্যান্স ', 'Coder Finance', '1757955233_project-5.jpg', '2025-09-15 14:23:33'),
+(4, 'কোডার হজ & ওমরাহ', 'Coder Hajj & Umrah', '1757955217_project-3.jpg', '2025-09-15 14:24:31'),
+(5, 'কোডার বিল্ডার্স ', 'Coder Builders', '1757955209_project-2.jpg', '2025-09-15 14:25:54'),
+(6, 'কোডার ফাউন্ডেশন', 'Coder Foundation', '1757955200_project-1.jpg', '2025-09-15 14:27:27');
 
 -- --------------------------------------------------------
 
@@ -68,7 +95,7 @@ CREATE TABLE `members_info` (
   `agreed_rules` tinyint(1) DEFAULT NULL,
   `profile_image` text DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `members_info`
@@ -92,7 +119,7 @@ CREATE TABLE `member_documents` (
   `doc_type` int(11) NOT NULL,
   `doc_path` text NOT NULL,
   `created_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `member_documents`
@@ -125,7 +152,7 @@ CREATE TABLE `member_nominee` (
   `percentage` float NOT NULL,
   `nominee_image` text NOT NULL,
   `created_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `member_nominee`
@@ -151,7 +178,7 @@ CREATE TABLE `member_office` (
   `office_address` text NOT NULL,
   `position` varchar(50) NOT NULL,
   `created_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `member_office`
@@ -182,32 +209,31 @@ CREATE TABLE `member_payments` (
   `created_by` int(11) DEFAULT NULL,
   `serial_no` int(11) DEFAULT NULL,
   `for_fees` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `member_payments`
 --
 
 INSERT INTO `member_payments` (`id`, `member_id`, `member_code`, `payment_method`, `bank_pay_date`, `bank_trans_no`, `trans_no`, `amount`, `payment_year`, `created_at`, `created_by`, `serial_no`, `for_fees`) VALUES
-(68, 11, 'CPSS-00001', 'admission_fee', '2025-09-08', 'dggfgdssdgr', 'admission_fee-2025-1', 5000.00, 2025, '2025-09-14 00:37:35', NULL, 1, 'admission_fee'),
-(69, 11, 'CPSS-00001', 'idcard_fee', '2025-09-08', 'dggfgdssdgr', 'idcard_fee-2025-1', 100.00, 2025, '2025-09-14 00:37:35', NULL, 1, 'idcard_fee'),
-(70, 11, 'CPSS-00001', 'passbook_fee', '2025-09-08', 'dggfgdssdgr', 'passbook_fee-2025-1', 100.00, 2025, '2025-09-14 00:37:35', NULL, 1, 'passbook_fee'),
-(71, 11, 'CPSS-00001', 'other_fee', '2025-09-08', 'dggfgdssdgr', 'other_fee-2025-1', 500.00, 2025, '2025-09-14 00:37:35', NULL, 1, 'other_fee'),
-(72, 11, 'CPSS-00001', 'softuses_fee', '2025-09-08', 'dggfgdssdgr', 'softuses_fee-2025-1', 300.00, 2025, '2025-09-14 00:37:35', NULL, 1, 'softuses_fee'),
-(73, 11, 'CPSS-00001', 'for_samity', '2025-09-08', 'dggfgdssdgr', 'for_samity-2025-1', 1500.00, 2025, '2025-09-14 00:37:35', NULL, 1, 'for_samity'),
-(74, 11, 'CPSS-00001', 'cma', '2025-09-08', 'dggfgdssdgr', 'cma-2025-1', 500.00, 2025, '2025-09-14 00:37:36', NULL, 1, 'cma'),
-(75, 11, 'CPSS-00001', 'chb', '2025-09-08', 'dggfgdssdgr', 'chb-2025-1', 500.00, 2025, '2025-09-14 00:37:36', NULL, 1, 'chb'),
-(76, 11, 'CPSS-00001', 'cii', '2025-09-08', 'dggfgdssdgr', 'cii-2025-1', 500.00, 2025, '2025-09-14 00:37:36', NULL, 1, 'cii'),
-(77, 11, 'CPSS-00001', 'cht', '2025-09-08', 'dggfgdssdgr', 'cht-2025-1', 500.00, 2025, '2025-09-14 00:37:36', NULL, 1, 'cht'),
-(78, 11, 'CPSS-00001', 'cnf', '2025-09-08', 'dggfgdssdgr', 'cnf-2025-1', 500.00, 2025, '2025-09-14 00:37:36', NULL, 1, 'cnf'),
-(79, 11, 'CPSS-00001', 'for_install', '2025-09-10', 'fdsfs', 'for_install-2025-1', 500.00, 2025, '2025-09-14 00:37:58', NULL, 1, 'for_install'),
-(80, 11, 'CPSS-00001', 'other_fee', '2025-09-10', 'fdsfs', 'other_fee-2025-2', 125.00, 2025, '2025-09-14 00:37:58', NULL, 2, 'other_fee'),
-(81, 11, 'CPSS-00001', 'for_samity', '2025-09-10', 'fdsfs', 'for_samity-2025-2', 750.00, 2025, '2025-09-14 00:37:58', NULL, 2, 'for_samity'),
-(82, 11, 'CPSS-00001', 'cma', '2025-09-10', 'fdsfs', 'cma-2025-2', 225.00, 2025, '2025-09-14 00:37:58', NULL, 2, 'cma'),
-(83, 11, 'CPSS-00001', 'chb', '2025-09-10', 'fdsfs', 'chb-2025-2', 225.00, 2025, '2025-09-14 00:37:58', NULL, 2, 'chb'),
-(84, 11, 'CPSS-00001', 'cii', '2025-09-10', 'fdsfs', 'cii-2025-2', 225.00, 2025, '2025-09-14 00:37:58', NULL, 2, 'cii'),
-(85, 11, 'CPSS-00001', 'cht', '2025-09-10', 'fdsfs', 'cht-2025-2', 225.00, 2025, '2025-09-14 00:37:58', NULL, 2, 'cht'),
-(86, 11, 'CPSS-00001', 'cnf', '2025-09-10', 'fdsfs', 'cnf-2025-2', 225.00, 2025, '2025-09-14 00:37:58', NULL, 2, 'cnf');
+(98, 11, 'CPSS-00001', 'admission', '2025-09-10', 'wertgh', 'TRadmission20251', '100.00', 2025, '2025-09-14 21:54:33', NULL, 1, 'idcard_fee'),
+(99, 11, 'CPSS-00001', 'admission', '2025-09-10', 'wertgh', 'TRadmission20251', '100.00', 2025, '2025-09-14 21:54:33', NULL, 1, 'passbook_fee'),
+(100, 11, 'CPSS-00001', 'admission', '2025-09-10', 'wertgh', 'TRadmission20251', '500.00', 2025, '2025-09-14 21:54:33', NULL, 1, 'other_fee'),
+(101, 11, 'CPSS-00001', 'admission', '2025-09-10', 'wertgh', 'TRadmission20251', '300.00', 2025, '2025-09-14 21:54:33', NULL, 1, 'softuses_fee'),
+(102, 11, 'CPSS-00001', 'admission', '2025-09-10', 'wertgh', 'TRadmission20251', '1500.00', 2025, '2025-09-14 21:54:33', NULL, 1, 'for_samity'),
+(103, 11, 'CPSS-00001', 'admission', '2025-09-10', 'wertgh', 'TRadmission20251', '500.00', 2025, '2025-09-14 21:54:33', NULL, 1, 'cma'),
+(104, 11, 'CPSS-00001', 'admission', '2025-09-10', 'wertgh', 'TRadmission20251', '500.00', 2025, '2025-09-14 21:54:33', NULL, 1, 'chb'),
+(105, 11, 'CPSS-00001', 'admission', '2025-09-10', 'wertgh', 'TRadmission20251', '500.00', 2025, '2025-09-14 21:54:33', NULL, 1, 'cii'),
+(106, 11, 'CPSS-00001', 'admission', '2025-09-10', 'wertgh', 'TRadmission20251', '500.00', 2025, '2025-09-14 21:54:33', NULL, 1, 'cht'),
+(107, 11, 'CPSS-00001', 'admission', '2025-09-10', 'wertgh', 'TRadmission20251', '500.00', 2025, '2025-09-14 21:54:33', NULL, 1, 'cnf'),
+(108, 11, 'CPSS-00001', 'january', '2025-09-11', 'TRFDERT', 'TRjanuary20251', '500.00', 2025, '2025-09-14 21:55:20', NULL, 1, 'for_install'),
+(109, 11, 'CPSS-00001', 'january', '2025-09-11', 'TRFDERT', 'TRjanuary20251', '125.00', 2025, '2025-09-14 21:55:20', NULL, 1, 'other_fee'),
+(110, 11, 'CPSS-00001', 'january', '2025-09-11', 'TRFDERT', 'TRjanuary20251', '750.00', 2025, '2025-09-14 21:55:20', NULL, 1, 'for_samity'),
+(111, 11, 'CPSS-00001', 'january', '2025-09-11', 'TRFDERT', 'TRjanuary20251', '225.00', 2025, '2025-09-14 21:55:20', NULL, 1, 'cma'),
+(112, 11, 'CPSS-00001', 'january', '2025-09-11', 'TRFDERT', 'TRjanuary20251', '225.00', 2025, '2025-09-14 21:55:20', NULL, 1, 'chb'),
+(113, 11, 'CPSS-00001', 'january', '2025-09-11', 'TRFDERT', 'TRjanuary20251', '225.00', 2025, '2025-09-14 21:55:20', NULL, 1, 'cii'),
+(114, 11, 'CPSS-00001', 'january', '2025-09-11', 'TRFDERT', 'TRjanuary20251', '225.00', 2025, '2025-09-14 21:55:20', NULL, 1, 'cht'),
+(115, 11, 'CPSS-00001', 'january', '2025-09-11', 'TRFDERT', 'TRjanuary20251', '225.00', 2025, '2025-09-14 21:55:20', NULL, 1, 'cnf');
 
 -- --------------------------------------------------------
 
@@ -233,14 +259,14 @@ CREATE TABLE `member_share` (
   `other_fee` int(11) DEFAULT NULL,
   `for_install` int(11) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `member_share`
 --
 
 INSERT INTO `member_share` (`id`, `member_id`, `member_code`, `no_share`, `admission_fee`, `idcard_fee`, `passbook_fee`, `softuses_fee`, `for_samity`, `cma`, `chb`, `cii`, `cht`, `cnf`, `other_fee`, `for_install`, `created_at`) VALUES
-(4, 11, 'CPSS-00001', 1, 5000, 100, 100, 300, 2250, 725, 725, 725, 725, 725, 625, 500, '2025-09-14 09:37:58'),
+(4, 11, 'CPSS-00001', 1, 5000, 100, 100, 300, 2250, 725, 725, 725, 725, 725, 625, 500, '2025-09-14 17:55:20'),
 (9, 18, 'CPSS-00012', 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (10, 19, 'CPSS-00019', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
@@ -261,7 +287,7 @@ CREATE TABLE `setup` (
   `phone2` varchar(20) DEFAULT NULL,
   `about_text` text DEFAULT NULL,
   `rules_regulation` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `setup`
@@ -283,7 +309,7 @@ CREATE TABLE `user_access` (
   `login` datetime NOT NULL,
   `logout` datetime NOT NULL,
   `created_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user_access`
@@ -345,7 +371,13 @@ INSERT INTO `user_access` (`id`, `user_id`, `member_id`, `login`, `logout`, `cre
 (53, '2', 0, '2025-09-13 21:02:04', '2025-09-13 21:18:06', '2025-09-13 21:02:04'),
 (54, '5', 11, '2025-09-13 21:18:12', '0000-00-00 00:00:00', '2025-09-13 21:18:12'),
 (55, '2', 0, '2025-09-14 03:50:56', '2025-09-14 03:51:04', '2025-09-14 03:50:56'),
-(56, '5', 11, '2025-09-14 03:51:11', '2025-09-14 04:04:39', '2025-09-14 03:51:11');
+(56, '5', 11, '2025-09-14 03:51:11', '2025-09-14 04:04:39', '2025-09-14 03:51:11'),
+(57, '5', 11, '2025-09-14 20:51:12', '2025-09-14 21:07:16', '2025-09-14 20:51:12'),
+(58, '2', 0, '2025-09-14 21:07:26', '2025-09-14 21:11:54', '2025-09-14 21:07:26'),
+(59, '5', 11, '2025-09-14 21:12:04', '0000-00-00 00:00:00', '2025-09-14 21:12:04'),
+(60, '2', 0, '2025-09-15 19:37:56', '2025-09-15 19:50:09', '2025-09-15 19:37:56'),
+(61, '2', 0, '2025-09-15 19:50:19', '2025-09-15 20:28:14', '2025-09-15 19:50:19'),
+(62, '2', 0, '2025-09-15 22:18:49', '0000-00-00 00:00:00', '2025-09-15 22:18:49');
 
 -- --------------------------------------------------------
 
@@ -363,7 +395,7 @@ CREATE TABLE `user_login` (
   `role` varchar(10) NOT NULL,
   `status` varchar(2) NOT NULL,
   `created_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user_login`
@@ -383,6 +415,12 @@ INSERT INTO `user_login` (`id`, `member_id`, `member_code`, `user_name`, `passwo
 -- Indexes for table `banner`
 --
 ALTER TABLE `banner`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `company`
+--
+ALTER TABLE `company`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -450,6 +488,12 @@ ALTER TABLE `banner`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT for table `company`
+--
+ALTER TABLE `company`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT for table `members_info`
 --
 ALTER TABLE `members_info`
@@ -477,7 +521,7 @@ ALTER TABLE `member_office`
 -- AUTO_INCREMENT for table `member_payments`
 --
 ALTER TABLE `member_payments`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=116;
 
 --
 -- AUTO_INCREMENT for table `member_share`
@@ -495,7 +539,7 @@ ALTER TABLE `setup`
 -- AUTO_INCREMENT for table `user_access`
 --
 ALTER TABLE `user_access`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT for table `user_login`
