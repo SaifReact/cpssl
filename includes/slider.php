@@ -1,41 +1,52 @@
 <?php
-// slider.php
+// Ensure the correct path to config.php
+include_once __DIR__ . '/../config/config.php';
+
+// Check if $pdo is defined
+if (!isset($pdo)) {
+    die('Database connection not established.');
+}
+
+// Fetch banners from the database
+try {
+    $stmt = $pdo->query("SELECT banner_name_bn, banner_name_en, banner_image FROM banner ORDER BY id DESC");
+    $banners = $stmt->fetchAll();
+} catch (Exception $e) {
+    die('Error fetching banners: ' . $e->getMessage());
+}
 ?>
-<div id="mainCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner rounded shadow">
-    <div class="carousel-item active">
-      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80" class="d-block w-100" alt="Bangladesh 1" style="height:350px;object-fit:cover;">
-      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
-        <h5>Beautiful Bangladesh</h5>
-        <p>Green fields and rivers everywhere.</p>
-      </div>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel">
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+        <?php foreach ($banners as $index => $banner): ?>
+        <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="<?= $index; ?>" class="<?= $index === 0 ? 'active' : ''; ?>" aria-current="<?= $index === 0 ? 'true' : 'false'; ?>" aria-label="Slide <?= $index + 1; ?>"></button>
+        <?php endforeach; ?>
     </div>
-    <div class="carousel-item">
-      <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=900&q=80" class="d-block w-100" alt="Bangladesh 2" style="height:350px;object-fit:cover;">
-      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
-        <h5>Culture & Heritage</h5>
-        <p>Rich traditions and vibrant festivals.</p>
-      </div>
+
+    <!-- Carousel Items -->
+    <div class="carousel-inner">
+        <?php foreach ($banners as $index => $banner): ?>
+        <div class="carousel-item <?= $index === 0 ? 'active' : ''; ?>">
+            <img src="banner/<?= htmlspecialchars($banner['banner_image']); ?>" class="d-block w-100" alt="<?= htmlspecialchars($banner['banner_name_en']); ?>" style="max-height: 500px; object-fit: cover;">
+            <div class="carousel-caption d-none d-md-block">
+                <h5><?= htmlspecialchars($banner['banner_name_en']); ?></h5>
+                <p><?= htmlspecialchars($banner['banner_name_bn']); ?></p>
+            </div>
+        </div>
+        <?php endforeach; ?>
     </div>
-    <div class="carousel-item">
-      <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=900&q=80" class="d-block w-100" alt="Bangladesh 3" style="height:350px;object-fit:cover;">
-      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
-        <h5>Natural Wonders</h5>
-        <p>Explore the beauty of the Sundarbans and beyond.</p>
-      </div>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
 </div>

@@ -23,8 +23,12 @@ $companies = $stmt->fetchAll();
                         <form action="../process/company_process.php" method="post" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-md-6 mb-3">
-                                    <label for="company_name" class="form-label">Company Name</label>
-                                    <input type="text" class="form-control" id="company_name" name="company_name" required>
+                                    <label for="company_name_en" class="form-label">Company Name (English)</label>
+                                    <input type="text" class="form-control" id="company_name_en" name="company_name_en" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="company_name_bn" class="form-label">Company Name (Bangla)</label>
+                                    <input type="text" class="form-control" id="company_name_bn" name="company_name_bn" required>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="company_image" class="form-label">Company Logo</label>
@@ -46,7 +50,8 @@ $companies = $stmt->fetchAll();
                                 <thead class="table-light">
                                     <tr>
                                         <th>ID</th>
-                                        <th>Company Name</th>
+                                        <th>Company Name (English)</th>
+                                        <th>Company Name (Bangla)</th>
                                         <th>Logo</th>
                                         <th>Actions</th>
                                     </tr>
@@ -55,7 +60,8 @@ $companies = $stmt->fetchAll();
                                     <?php foreach ($companies as $company): ?>
                                     <tr>
                                         <td><?= $company['id']; ?></td>
-                                        <td><?= htmlspecialchars($company['company_name']); ?></td>
+                                        <td><?= htmlspecialchars($company['company_name_en']); ?></td>
+                                        <td><?= htmlspecialchars($company['company_name_bn']); ?></td>
                                         <td>
                                             <img src="../company/<?= htmlspecialchars($company['company_image']); ?>" style="height:40px;cursor:pointer;" onclick="showCompanyModal('../company/<?= htmlspecialchars($company['company_image']); ?>')">
                                         </td>
@@ -66,7 +72,7 @@ $companies = $stmt->fetchAll();
                                                     <i class="fa fa-trash"></i>
                                                 </button>
                                             </form>
-                                            <button type="button" class="btn btn-info btn-sm" onclick="editCompany(<?= $company['id']; ?>, '<?= htmlspecialchars($company['company_name'], ENT_QUOTES); ?>', '../company/<?= htmlspecialchars($company['company_image']); ?>')">
+                                            <button type="button" class="btn btn-info btn-sm" onclick="editCompany(<?= $company['id']; ?>, '<?= htmlspecialchars($company['company_name_en'], ENT_QUOTES); ?>', '<?= htmlspecialchars($company['company_name_bn'], ENT_QUOTES); ?>', '../company/<?= htmlspecialchars($company['company_image']); ?>')">
                                                 <i class="fa fa-edit"></i>
                                             </button>
                                         </td>
@@ -103,8 +109,12 @@ $companies = $stmt->fetchAll();
                           <input type="hidden" name="id" id="edit_id">
                           <div class="row">
                             <div class="mb-3 col-md-6">
-                              <label for="edit_company_name" class="form-label">Company Name</label>
-                              <input type="text" class="form-control" id="edit_company_name" name="company_name" required>
+                              <label for="edit_company_name_en" class="form-label">Company Name (English)</label>
+                              <input type="text" class="form-control" id="edit_company_name_en" name="company_name_en" required>
+                            </div>
+                            <div class="mb-3 col-md-6">
+                              <label for="edit_company_name_bn" class="form-label">Company Name (Bangla)</label>
+                              <input type="text" class="form-control" id="edit_company_name_bn" name="company_name_bn" required>
                             </div>
                             <div class="mb-3 col-md-6">
                               <label for="edit_company_image" class="form-label">Company Logo (optional)</label>
@@ -155,9 +165,10 @@ function previewEditCompanyImage(event) {
     img.style.display = 'none';
   }
 }
-function editCompany(id, name, imgSrc) {
+function editCompany(id, nameEn, nameBn, imgSrc) {
   document.getElementById('edit_id').value = id;
-  document.getElementById('edit_company_name').value = name;
+  document.getElementById('edit_company_name_en').value = nameEn;
+  document.getElementById('edit_company_name_bn').value = nameBn;
   document.getElementById('editCompanyCurrentImage').src = imgSrc;
   document.getElementById('editCompanyImagePreview').style.display = 'none';
   var modal = new bootstrap.Modal(document.getElementById('editCompanyModal'));

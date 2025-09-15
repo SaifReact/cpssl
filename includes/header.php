@@ -5,6 +5,7 @@ if (session_status() === PHP_SESSION_NONE) {
 ?>
 <!-- Google Fonts: Poppins -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<header>
 <nav class="navbar navbar-expand-lg fixed-top" style="background: linear-gradient(90deg, #ffecd2 0%, #fcb69f 100%); min-height: 64px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); font-family: 'Poppins', Arial, sans-serif;">
     <div class="container">
         <a href="index.php" style="text-decoration:none;">
@@ -44,3 +45,5 @@ if (session_status() === PHP_SESSION_NONE) {
         </div>
     </div>
 </nav>
+</header>
+
