@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include 'includes/head.php'; ?>
+<?php include_once __DIR__ . '/includes/head.php'; ?>
 
 <body>
     <!-- Spinner Start -->
@@ -16,7 +16,7 @@
     <!-- Navbar Start -->
     <div class="container-fluid sticky-top">
         <div class="container">
-            <?php include 'includes/menu.php'; ?>
+            <?php include_once __DIR__ .'/includes/menu.php'; ?>
         </div>
     </div>
     <!-- Navbar End -->
@@ -24,7 +24,7 @@
     <!-- Hero Start -->
     <div class="container-fluid pb-5 hero-header bg-light mb-5">
         <div class="container py-3">
-            <?php include 'includes/slider.php'; ?>
+            <?php include_once __DIR__ .'/includes/slider.php'; ?>
         </div>
     </div>
     <!-- Hero End -->
@@ -84,14 +84,14 @@
     <!-- Project Start -->
     <div class="container-fluid bg-light py-3">
         <div class="container py-3">
-            <?php include 'includes/project.php'; ?>
+            <?php include_once __DIR__ .'/includes/project.php'; ?>
         </div>
     </div>
     <!-- Project End -->
 
     <!-- Service Start -->
     <div class="container-fluid py-3">
-        <?php include 'includes/service.php'; ?>
+        <?php include_once __DIR__ .'/includes/service.php'; ?>
     </div>
     <!-- Service End -->
 
@@ -120,14 +120,4 @@
     </div>
     <!-- Newsletter End -->
 
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-white-50 footer pt-3">
-        <?php include 'includes/footer.php'; ?>
-    </div>
-    <!-- Footer End -->
-
-
-    <!-- Back to Top -->
-    <?php include 'includes/js.php'; ?>
-</body>
-</html>
+   <?php include_once __DIR__ . '/includes/end.php'; ?>

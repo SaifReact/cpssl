@@ -1,51 +1,11 @@
-<!-- Toast Notification -->
-<div aria-live="polite" aria-atomic="true" style="position: fixed; top: 1.5rem; right: 1.5rem; z-index: 1080; min-width: 320px;">
-  <div id="cornerToast" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true" style="display:none;">
-    <div class="d-flex">
-      <div class="toast-body" id="cornerToastMsg"></div>
-      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close" onclick="hideCornerToast()"></button>
-    </div>
-  </div>
-</div>
-<?php
-session_start();
-if (isset($_SESSION['success_msg'])) {
-    echo '<script>window.addEventListener("DOMContentLoaded",function(){showCornerToast("'.addslashes($_SESSION['success_msg']).'","success")});</script>';
-    unset($_SESSION['success_msg']);
-}
-if (isset($_GET['error'])) {
-    echo '<script>window.addEventListener("DOMContentLoaded",function(){showCornerToast("'.addslashes($_GET['error']).'","error")});</script>';
-}
-?>
-<script>
-// Toast notification logic
-function showCornerToast(msg, type) {
-  var toast = document.getElementById('cornerToast');
-  var toastMsg = document.getElementById('cornerToastMsg');
-  toastMsg.textContent = msg;
-  if (type === 'success') {
-    toast.classList.remove('bg-danger');
-    toast.classList.add('bg-success');
-  } else {
-    toast.classList.remove('bg-success');
-    toast.classList.add('bg-danger');
-  }
-  toast.style.display = 'block';
-  setTimeout(hideCornerToast, 4000);
-}
-function hideCornerToast() {
-  var toast = document.getElementById('cornerToast');
-  toast.style.display = 'none';
-}
-</script>
-<!DOCTYPE html>
-<html lang="en">
-<?php include '../includes/head.php'; ?>
-    <?php include '../includes/menu.php'; ?>
-    <div class="container py-5 mt-5">
-        <div class="row justify-content-center">
+   <?php include_once __DIR__ . '/includes/open.php'; ?>
+
+    <!-- Hero Start -->
+    <div class="container-fluid pb-5 hero-header bg-light">
+        <div class="container">
+           <div class="row justify-content-center">
             <div class="col-12 col-lg-12 col-xl-10">
-                <div class="glass-card p-4 p-md-5">
+                <div class="glass-card">
                     <h5 class="text-center fw-bold mb-4" style="color:#b85c38; letter-spacing:1px; text-shadow:1px 2px 8px #fff8; font-size:1.5rem; font-family:'Poppins',sans-serif;">Member Registration Form ( সদস্য নিবন্ধন ফর্ম )</h5>
                     <hr />
                     <div class="mb-4">
@@ -73,14 +33,9 @@ function hideCornerToast() {
             </div>
         </div>
     </div>
-   <?php include 'includes/js.php'; ?>
-                </div>
-            </div>
-        </div>
     </div>
-</div>
-</div>
-</div>
-<?php include 'includes/footer.php'; ?>
-</body>
-</html>
+    <!-- Hero End -->
+
+    
+
+   <?php include_once __DIR__ . '/includes/end.php'; ?>

@@ -70,13 +70,8 @@ $siteName = isset($_SESSION['setup']['site_name_bn']) ? $_SESSION['setup']['site
             <div class="copyright">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="#!">Your Site Name</a>, All Right Reserved.
-
-                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
-                        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
-                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>. Distributed by
-                        <a class="border-bottom" href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                        &copy; <a class="border-bottom" href="#!">CPSSL</a>, All Right Reserved.
+                        Designed By <a class="border-bottom" href="#">Coder Station</a>
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <div class="footer-menu">
