@@ -5,6 +5,7 @@
     <!-- Footer End -->
 
     <!-- Back to Top -->
+    <?php include_once __DIR__ .'/jsFooter.php'; ?>
     <?php include_once __DIR__ .'/js.php'; ?>
 </body>
 </html>

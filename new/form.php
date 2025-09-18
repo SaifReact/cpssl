@@ -4,12 +4,12 @@
     <div class="container-fluid pb-5 hero-header bg-light">
         <div class="container">
            <div class="row justify-content-center">
-            <div class="col-12 col-lg-12 col-xl-10">
+            <div class="col-12 col-md-12 col-lg-12 col-xl-12">
                 <div class="glass-card">
-                    <h5 class="text-center fw-bold mb-4" style="color:#b85c38; letter-spacing:1px; text-shadow:1px 2px 8px #fff8; font-size:1.5rem; font-family:'Poppins',sans-serif;">Member Registration Form ( সদস্য নিবন্ধন ফর্ম )</h5>
+                    <h5 class="text-center fw-bold mb-4" style="color:#045D5D; letter-spacing:1px; text-shadow:1px 2px 8px #fff8; font-size:1.5rem; font-family:'Poppins',sans-serif;">Member Registration Form ( সদস্য নিবন্ধন ফর্ম )</h5>
                     <hr />
                     <div class="mb-4">
-                        <h5 class="fw-bold mb-3" style="color:#b85c38;">Rules and Regulations (নিয়মাবলি ও বিধান)</h5>
+                        <h5 class="fw-bold mb-3" style="color:#008080;">Rules and Regulations (নিয়মাবলি ও বিধান)</h5>
                         <ul style="font-size:1.05rem;line-height:1.7;">
                             <li>সমিতির নাম: "কোডার পেশাজীবী সমবায় সমিতি লিমিটেড" (Coder Pesajibi Samabay Samity Ltd.)</li>
                             <li>সমিতির ঠিকানা: সমিতির নিবন্ধিত অফিস হবে []।</li>
@@ -35,7 +35,5 @@
     </div>
     </div>
     <!-- Hero End -->
-
-    
 
    <?php include_once __DIR__ . '/includes/end.php'; ?>
