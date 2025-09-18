@@ -32,8 +32,8 @@ $siteName = isset($_SESSION['setup']['site_name_bn']) ? $_SESSION['setup']['site
         <div class="navbar-nav ms-auto">
             <a href="index.php" class="nav-item nav-link active">Home (প্রচ্ছদ)</a>
             <a href="form.php" class="nav-item nav-link">Registration (নিবন্ধন)</a>
-            <a href="views/login.php" class="nav-item nav-link">Login (লগইন)</a>
-            <a href="views/contact.php" class="nav-item nav-link">Contact (যোগাযোগ)</a>
+            <a href="login.php" class="nav-item nav-link">Login (লগইন)</a>
+            <a href="contact.php" class="nav-item nav-link">Contact (যোগাযোগ)</a>
         </div>
     </div>
 </nav>

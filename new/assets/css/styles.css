@@ -44,7 +44,7 @@
     border-radius: 1.5rem;
     box-shadow: 0 2px 12px #b85c3822;
     padding: 1rem 1.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: .5rem;
     border: 1.5px solid #e7b17a;
 }
 .section-card h5 {
@@ -105,19 +105,5 @@
     letter-spacing: 1px;
     text-shadow: 1px 2px 8px #fff8;
 }
-.footer-link {
-    color: #4b3832 !important;
-    transition: color 0.2s, letter-spacing 0.2s;
-}
-.footer-link:hover {
-    color: #b85c38 !important;
-    text-decoration: underline !important;
-    letter-spacing: 1px;
-}
-.text-muted, .small.text-muted {
-    color: #7c5e57 !important;
-}
-.footer-icon {
-    color: #b85c38;
-}
+
 

@@ -1,0 +1,36 @@
+   <?php include_once __DIR__ . '/includes/open.php'; ?>
+   <!-- Hero Start -->
+   <div class="container-fluid pb-5 hero-header bg-light">
+     <div class="container">
+       <div class="row justify-content-center">
+         <div class="col-12 col-md-12 col-lg-12 col-xl-6">
+           <div class="glass-card">
+             <h5 class="text-center fw-bold mb-4" style="color:#045D5D; letter-spacing:1px; text-shadow:1px 2px 8px #fff8; font-size:1.5rem; font-family:'Poppins',sans-serif;">Login ( লগইন )</h5>
+             <hr />
+             <div class="mb-4">
+               <form method="post" action="process/login_process.php">
+                 <div class="mb-2">
+                   <label for="username" class="form-label">Username <span class="text-secondary small">(ইউজারনেম)</span>
+                    </label>
+                   <input type="text" class="form-control" id="username" name="username" required autofocus>
+                 </div>
+                 <div class="mb-2">
+                   <label for="password" class="form-label">Password <span class="text-secondary small">(পাসওয়ার্ড)</span>
+                     </label>
+                   <input type="password" class="form-control" id="password" name="password" required>
+                 </div>
+                 <div class="form-check mt-3">
+                   <input class="form-check-input" type="checkbox" value="1" id="agreeRules">
+                   <label class="form-check-label" for="agreeRules"> Remember Me ( আমাকে মনে রেখো ) </label>
+                 </div>
+                 <div class="text-center mt-4">
+                   <button type="submit" id="goToFormBtn" class="btn btn-success btn-md rounded-pill px-5" style="display:none; letter-spacing:1px;">Proceed to Login ( লগইন করতে এগিয়ে যান )</button>
+                 </div>
+               </form>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+   <!-- Hero End --> <?php include_once __DIR__ . '/includes/end.php'; ?>

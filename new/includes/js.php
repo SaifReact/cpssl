@@ -192,8 +192,8 @@
             ? '<button type="button" class="btn-close position-absolute top-0 end-0 m-2" title="Cannot remove first nominee" tabindex="-1" style="opacity:0; pointer-events:none;"></button>'
             : '<button type="button" class="btn-close position-absolute top-0 end-0 m-2 removeNomineeBtn" title="Remove Nominee" tabindex="-1"></button>';
         return `
-        <div class="card mb-2 nominee-card position-relative" style="box-shadow:0 1px 8px #b85c3811;">
-            <div class="card-body">
+        <div class="mb-2 nominee-card position-relative" style="box-shadow:0 1px 8px #b85c3811;">
+            <div>
                 ${removeBtn}
                 <div class="row">
                     <div class="col-md-6">

@@ -5,31 +5,12 @@
        <div class="row justify-content-center">
          <div class="col-12 col-md-12 col-lg-12 col-xl-12">
            <div class="glass-card-header">
-             <h5 class="text-center fw-bold" style="color:#045D5D; letter-spacing:1px; text-shadow:1px 2px 8px #fff8; font-size:1.5rem; font-family:'Poppins',sans-serif;">Member Registration Form ( সদস্য নিবন্ধন ফর্ম )</h5> <?php
-            $agreed = isset($_GET['agreed']) ? base64_decode($_GET['agreed']) : '';
-            ?>
+             <h5 class="text-center fw-bold" style="color:#045D5D; letter-spacing:1px; text-shadow:1px 2px 8px #fff8; font-size:1.5rem; font-family:'Poppins',sans-serif;">Member Registration Form ( সদস্য নিবন্ধন ফর্ম )</h5> 
            </div>
            <form method="post" action="process/member_register_process.php" enctype="multipart/form-data">
              <div id="formErrorMsg" class="alert alert-danger" style="display:none;"></div>
-             <div class="mb-1">
-               <input type="hidden" class="form-control" id="agreed_rules" name="agreed_rules" value="
-                
-							<?php echo $agreed; ?>" readonly>
-             </div>
              <div class="mb-4">
                <div class="glass-card mb-2">
-                 <div class="row">
-                   <div class="col-md-9">
-                     <label for="profile_image" class="form-label">Profile Image <span class="text-secondary small">(ছবি নির্বাচন করুন)</span>
-                     </label>
-                     <input class="form-control" type="file" id="profile_image" name="profile_image" accept="image/*" onchange="previewImage(event)">
-                     <span id="profileImageError" class="text-danger small"></span>
-                   </div>
-                   <div class="col-md-3 d-flex justify-content-center align-items-center position-relative" style="min-height: 90px;">
-                     <img id="imagePreview" src="#" alt="Image Preview" style="display:none; max-width: 200px; max-height: 75px; border-radius: 5px; box-shadow: 0 2px 8px #0002; background: #fff; padding: 6px;" />
-                     <button type="button" id="profileImgClear" class="btn-close" style="display:none; position:absolute; top:8px; right:8px; background:#d33; opacity:0.8; width:18px; height:18px; padding:2px; border-radius:50%; z-index:2;" tabindex="-1" title="Clear Image"></button>
-                   </div>
-                 </div>
                  <div class="row">
                    <div class="col-md-4">
                      <div class="mb-2">
