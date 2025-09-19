@@ -14,17 +14,22 @@
                     </label>
                    <input type="text" class="form-control" id="username" name="username" required autofocus>
                  </div>
-                 <div class="mb-2">
-                   <label for="password" class="form-label">Password <span class="text-secondary small">(পাসওয়ার্ড)</span>
+                 <div class="mb-4">
+                     <label for="password" class="form-label">Password <span class="text-secondary small">(পাসওয়ার্ড)</span>
                      </label>
-                   <input type="password" class="form-control" id="password" name="password" required>
+                     <div class="input-group">
+                       <input type="password" class="form-control" id="password" name="password" required>
+                       <button type="button" class="btn btn-outline-secondary" onclick="togglePassword('password', this)" tabindex="-1">
+                         <i class="fa fa-eye"></i>
+                       </button>
+                     </div>
                  </div>
                  <div class="form-check mt-3">
-                   <input class="form-check-input" type="checkbox" value="1" id="agreeRules">
-                   <label class="form-check-label" for="agreeRules"> Remember Me ( আমাকে মনে রেখো ) </label>
+                   <input class="form-check-input" type="checkbox" value="1" >
+                   <label class="form-check-label"> Remember Me ( আমাকে মনে রেখো ) </label>
                  </div>
                  <div class="text-center mt-4">
-                   <button type="submit" id="goToFormBtn" class="btn btn-success btn-md rounded-pill px-5" style="display:none; letter-spacing:1px;">Proceed to Login ( লগইন করতে এগিয়ে যান )</button>
+                   <button type="submit" class="btn btn-success btn-md rounded-pill px-5" style="letter-spacing:1px;">Proceed to Login ( লগইন করতে এগিয়ে যান )</button>
                  </div>
                </form>
              </div>
