@@ -30,10 +30,19 @@ $siteName = isset($_SESSION['setup']['site_name_bn']) ? $_SESSION['setup']['site
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto">
-            <a href="index.php" class="nav-item nav-link active">Home (প্রচ্ছদ)</a>
-            <a href="form.php" class="nav-item nav-link">Registration (নিবন্ধন)</a>
-            <a href="login.php" class="nav-item nav-link">Login (লগইন)</a>
-            <a href="contact.php" class="nav-item nav-link">Contact (যোগাযোগ)</a>
+            <?php if (isset($_SESSION['user_id'])): ?>
+                <?php if ($_SESSION['role'] === 'Admin'): ?>
+                    <a class="nav-item nav-link active" href="#">Welcome, <b><?php echo htmlspecialchars($_SESSION['user_name']); ?></b>!</a>
+                <?php elseif ($_SESSION['role'] === 'user'): ?>
+                    <a class="nav-item nav-link active" href="#">Welcome, <b><?php echo htmlspecialchars($_SESSION['user_name']); ?></b>!</a>
+                <?php endif; ?>
+                <a class="nav-item nav-link active" href="/cpssl/new/includes/logout.php">Logout (লগআউট)</a>
+            <?php else: ?>
+                <a href="index.php" class="nav-item nav-link active">Home (প্রচ্ছদ)</a>
+                <a href="form.php" class="nav-item nav-link">Registration (নিবন্ধন)</a>
+                <a href="login.php" class="nav-item nav-link">Login (লগইন)</a>
+                <a href="contact.php" class="nav-item nav-link">Contact (যোগাযোগ)</a>
+            <?php endif; ?>
         </div>
     </div>
 </nav>
